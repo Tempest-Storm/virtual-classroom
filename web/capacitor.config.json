@@ -1,0 +1,13 @@
+{
+  "appId": "io.demo.virtualclassroom",
+  "appName": "Virtual Classroom",
+  "webDir": "dist",
+  "backgroundColor": "#0d0d0d",
+  "server": {
+    "androidScheme": "http",
+    "cleartext": true
+  },
+  "android": {
+    "backgroundColor": "#0d0d0d"
+  }
+}

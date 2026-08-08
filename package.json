@@ -1,0 +1,21 @@
+{
+  "name": "ai-virtual-classroom",
+  "private": true,
+  "version": "1.0.0",
+  "description": "AI-Powered Virtual Classroom System with Automated Attendance and Performance Analysis",
+  "workspaces": [
+    "server",
+    "web"
+  ],
+  "scripts": {
+    "dev": "concurrently -n api,web -c blue,green \"npm:dev:server\" \"npm:dev:web\"",
+    "dev:server": "npm --workspace server run dev",
+    "dev:web": "npm --workspace web run dev",
+    "seed": "npm --workspace server run seed",
+    "install:all": "npm install && npm --prefix mobile install"
+  },
+  "devDependencies": {
+    "concurrently": "^9.1.0",
+    "localtunnel": "^2.0.2"
+  }
+}

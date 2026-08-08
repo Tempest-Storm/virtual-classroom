@@ -1,0 +1,29 @@
+# Render Blueprint — deploys the API as a free web service.
+# The database is MongoDB Atlas (free M0); paste its connection string into the
+# MONGO_URI env var in the Render dashboard (it's marked secret below).
+#
+# Docs / steps: see DEPLOY.md
+services:
+  - type: web
+    name: virtual-classroom-api
+    env: node
+    rootDir: server
+    plan: free
+    region: frankfurt          # pick the region closest to you
+    buildCommand: npm install
+    startCommand: node src/index.js
+    healthCheckPath: /api/health
+    autoDeploy: true
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: JWT_SECRET
+        generateValue: true    # Render generates a strong random secret
+      - key: SEED_ON_START
+        value: "true"          # loads the demo accounts on first boot (only if DB empty)
+      - key: CLIENT_ORIGIN
+        # Origins the native app uses (Capacitor WebView). Add a web origin here
+        # too if you later host the browser app.
+        value: "http://localhost,https://localhost,capacitor://localhost"
+      - key: MONGO_URI
+        sync: false            # paste your Atlas connection string in the dashboard

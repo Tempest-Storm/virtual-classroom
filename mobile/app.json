@@ -1,0 +1,28 @@
+{
+  "expo": {
+    "name": "Virtual Classroom",
+    "slug": "virtual-classroom",
+    "version": "1.0.0",
+    "orientation": "portrait",
+    "userInterfaceStyle": "automatic",
+    "scheme": "virtualclassroom",
+    "splash": { "resizeMode": "contain", "backgroundColor": "#2a78d6" },
+    "assetBundlePatterns": ["**/*"],
+    "ios": {
+      "supportsTablet": true,
+      "bundleIdentifier": "io.demo.virtualclassroom",
+      "infoPlist": {
+        "NSCameraUsageDescription": "The camera is used to confirm your attendance in live classes.",
+        "NSMicrophoneUsageDescription": "The microphone lets you speak during live classes."
+      }
+    },
+    "android": {
+      "package": "io.demo.virtualclassroom",
+      "permissions": ["CAMERA", "RECORD_AUDIO", "MODIFY_AUDIO_SETTINGS"]
+    },
+    "extra": {
+      "apiUrl": "http://192.168.0.100:5000/api",
+      "webUrl": "http://192.168.0.100:5174"
+    }
+  }
+}
