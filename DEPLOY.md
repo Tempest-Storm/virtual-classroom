@@ -33,19 +33,20 @@ dashboards and paste one value.
 
 ## Step 2 — Push the code to GitHub
 
-Render deploys from a Git repo. From this project on your PC:
+Render deploys from a Git repo. The repo is **already initialised and committed**
+(branch `main`, ~1.2 MB — node_modules, the APK, and Android build files are
+git-ignored). You only create an empty GitHub repo and push:
 
-```bash
-cd ~/benjamin-help
-git init && git add -A && git commit -m "Virtual Classroom"
-# create an EMPTY repo on github.com first (no README), then:
-git remote add origin https://github.com/<you>/virtual-classroom.git
-git branch -M main
-git push -u origin main
-```
-
-(node_modules, the APK, and Android build files are git-ignored, so the push
-stays small.)
+1. On <https://github.com/new> create an **empty** repo named e.g.
+   `virtual-classroom` (no README, no .gitignore).
+2. From this project on your PC:
+   ```bash
+   cd ~/benjamin-help
+   git remote add origin https://github.com/<you>/virtual-classroom.git
+   git push -u origin main
+   ```
+   (GitHub will ask for your username + a Personal Access Token as the password —
+   github.com ▸ Settings ▸ Developer settings ▸ Tokens if you don't have one.)
 
 ## Step 3 — API: Render (free)
 
